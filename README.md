@@ -1,5 +1,7 @@
 # Income Expense Calculation Application (Freelancer Data Tracking)
 
+https://github.com/user-attachments/assets/a358b2cc-7582-46e8-b751-e8371ea189d6
+
 ## 🚀 About the Project
 
 This project is a simple financial tracking application that allows you to monitor your daily income and expenses using a Streamlit web interface. The entered income and expenses are stored in a MySQL database and can be optionally visualized with summary charts.
