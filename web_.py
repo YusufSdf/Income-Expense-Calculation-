@@ -4,11 +4,17 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import datetime # datetime modülünü ekledim, tarih çevrimi için gerekli
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASS")
 
 db = mysql.connector.connect(
     host = "localhost",
-    user = "user",
-    password = "password",
+    user = user,
+    password = password,
     database = "income_expenses"
 )
 cursor = db.cursor()
