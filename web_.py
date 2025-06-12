@@ -7,6 +7,18 @@ import datetime # datetime modülünü ekledim, tarih çevrimi için gerekli
 import os
 from dotenv import load_dotenv
 
+@st.cache_resource
+def get_db_connection():
+    return mysql.connector.connect(
+        host=st.secrets.connections.mysql.host,
+        user=st.secrets.connections.mysql.username, # Burada username olarak tanımladık
+        password=st.secrets.connections.mysql.password, # Burada password olarak tanımladık
+        database=st.secrets.connections.mysql.database,
+        charset=st.secrets.connections.mysql.query.charset # Charset'i de buradan çekiyoruz
+    )
+db = get_db_connection()
+cursor = db.cursor()
+
 load_dotenv()
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASS")
