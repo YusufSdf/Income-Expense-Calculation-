@@ -19,18 +19,6 @@ def get_db_connection():
 db = get_db_connection()
 cursor = db.cursor()
 
-load_dotenv()
-user = os.getenv("DB_USER")
-password = os.getenv("DB_PASS")
-
-db = mysql.connector.connect(
-    host = "localhost",
-    user = user,
-    password = password,
-    database = "income_expenses"
-)
-cursor = db.cursor()
-
 st.title("Income Expense Calculation")
 col1, col2 , col3 = st.columns(3)
 income_ = st.text_input("Write income")
